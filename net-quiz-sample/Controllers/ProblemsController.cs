@@ -17,7 +17,14 @@ namespace net_quiz_sample.Controllers
         // GET: api/Problems
         public IQueryable<Problem> GetProblems()
         {
-            return db.Problems;
+            if (ConfigurationManager.AppSettings["UseEnvironmentDatabase"].Equals("false"))
+            {
+                return null;
+            }
+            else
+            {
+                return db.Problems;
+            }
         }
 
         // GET: api/Problems/5

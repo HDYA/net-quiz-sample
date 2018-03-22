@@ -192,7 +192,7 @@
     <Compile Include="Controllers\IKeyController.cs" />
     <Compile Include="Controllers\ProblemsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
