@@ -1,8 +1,8 @@
 .vs
 
 packages
-net-quiz-sample\bin
-net-quiz-sample\obj
+net-quiz-sample/bin
+net-quiz-sample/obj
 
-net-quiz-sample\fonts
+net-quiz-sample/fonts
 *.ldf
