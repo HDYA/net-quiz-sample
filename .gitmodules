@@ -1,0 +1,3 @@
+[submodule "net-quiz-sample/quiz"]
+	path = net-quiz-sample/quiz
+	url = https://github.com/HDYA/quiz-web.git
