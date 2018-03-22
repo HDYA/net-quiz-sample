@@ -23,7 +23,7 @@ namespace net_quiz_sample.Controllers
 
         // GET: api/Users/5
         [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> GetUsers(int id)
+        public async Task<IHttpActionResult> GetUsers(string id)
         {
             User user = await db.Users.FindAsync(id);
             if (user == null)
@@ -34,33 +34,25 @@ namespace net_quiz_sample.Controllers
             return Ok(user);
         }
 
-        // PUT: api/Users/5
+        // PUT: api/Users
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutUsers(int id, User uses)
+        public async Task<IHttpActionResult> PutUsers(User uses)
         {
-            if (!ModelState.IsValid)
+            // Workaround when database is not avaliable
+            if (ConfigurationManager.AppSettings["UseEnvironmentDatabase"].Equals("true"))
             {
-                return BadRequest(ModelState);
-            }
-
-            if (id != uses.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(uses).State = EntityState.Modified;
-
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsersExists(id))
+                if (!ModelState.IsValid)
                 {
-                    return NotFound();
+                    return BadRequest(ModelState);
                 }
-                else
+
+                db.Entry(uses).State = EntityState.Modified;
+
+                try
+                {
+                    await db.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
                 {
                     throw;
                 }
@@ -82,26 +74,11 @@ namespace net_quiz_sample.Controllers
                 }
 
                 db.Users.Add(user);
+
                 await db.SaveChangesAsync();
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = user.Id }, user);
-        }
-
-        // DELETE: api/Users/5
-        [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> DeleteUsers(int id)
-        {
-            User user = await db.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            db.Users.Remove(user);
-            await db.SaveChangesAsync();
-
-            return Ok(user);
+            return CreatedAtRoute("DefaultApi", new { id = user.Identifier }, user);
         }
 
         protected override void Dispose(bool disposing)
@@ -113,9 +90,9 @@ namespace net_quiz_sample.Controllers
             base.Dispose(disposing);
         }
 
-        private bool UsersExists(int id)
+        private bool UsersExists(string uid)
         {
-            return db.Users.Count(e => e.Id == id) > 0;
+            return db.Users.Count(e => e.Identifier.Equals(uid)) > 0;
         }
     }
 }

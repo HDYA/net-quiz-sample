@@ -14,6 +14,7 @@ namespace net_quiz_sample.Context
             else
             {
                 context.Problems.AddRange(Problem.DefaultProblems);
+                context.Users.AddRange(User.DefaultUsers);
                 context.SaveChanges();
             }
         }
