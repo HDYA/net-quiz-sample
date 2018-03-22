@@ -1,0 +1,10 @@
+---
+applications:
+- name: net-quiz-example
+  path: ./net-quiz-sample
+  buildpack: hwc_buildpack
+  stack: windows2012R2
+  memory: 512M
+  instances: 1
+  # env:
+    # APPLICATION_INSIGHTS_IKEY: 
