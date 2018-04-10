@@ -20,6 +20,7 @@ namespace net_quiz_sample
 
             DatabaseConfig.Configuration();
             Database.SetInitializer<QuizDbContext>(new DropCreateDatabaseIfModelChanges<QuizDbContext>());
+            AppInsightsConfig.Configure();
         }
     }
 }
