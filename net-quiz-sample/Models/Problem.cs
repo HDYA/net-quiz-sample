@@ -72,7 +72,34 @@ namespace net_quiz_sample.Models
                 Difficulty = 0,
                 Options = "[ \"Connect the world’s professionals to make them more productive and successful\", \"Be the fabric of real-time communication on the web\", \"Empower every person and every organization on the planet to achieve more\", \"Make it fast, easy and fun to build great mobile apps\" ]",
                 Answer = 2
-            }
+            },
+            new Problem
+            {
+                Id = 6,
+                Content = "What are supported when you run .NET  core apps on Cloud Foundry",
+                Category = "Technology",
+                Difficulty = 0,
+                Options = "[ \".Net Core Buildpacks\", \"Steeltoe\", \"Service Broker\", \"All of above\" ]",
+                Answer = 3
+            },
+            new Problem
+            {
+                Id = 7,
+                Content = "When did Microsoft join the Cloud Foundry Foundation",
+                Category = "Technology",
+                Difficulty = 0,
+                Options = "[ \"June, 2017\", \"Nov, 2017\", \"June 2016\", \"Nov.2016\" ]",
+                Answer = 0
+            },
+            new Problem
+            {
+                Id = 8,
+                Content = "What are supported when you run .NET  Framework apps on Cloud Foundry",
+                Category = "Technology",
+                Difficulty = 0,
+                Options = "[ \"SSH into running containers\", \"Steeltoe\", \"Service Broker\", \"All of above\" ]",
+                Answer = 3
+            },
         };
     }
 }
