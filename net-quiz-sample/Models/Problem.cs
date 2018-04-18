@@ -31,7 +31,7 @@ namespace net_quiz_sample.Models
             new Problem
             {
                 Id = 1,
-                Content = "How many regions Microsoft Azure has GAed across the globe",
+                Content = "How many regions does Microsoft Azure currently have around the world",
                 Category = "Technology",
                 Difficulty = 0,
                 Options = "[ \"32\", \"36\", \"40\", \"44\" ]",
@@ -49,16 +49,16 @@ namespace net_quiz_sample.Models
             new Problem
             {
                 Id = 3,
-                Content = "Where is the headquarter of Microsoft",
+                Content = "Which one is NOT a Recursive Acronym",
                 Category = "Technology",
                 Difficulty = 0,
-                Options = "[ \"Cupertino\", \"Mountain View\", \"Redmond\", \"Seattle\" ]",
+                Options = "[ \"TINT\", \"GNU\", \"PCF\", \"YAML\" ]",
                 Answer = 2
             },
             new Problem
             {
                 Id = 4,
-                Content = "When is Opensource Cloud Foundry GAed on Microsoft Azure",
+                Content = "When is Open Source Cloud Foundry available on Microsoft Azure",
                 Category = "Technology",
                 Difficulty = 0,
                 Options = "[ \"2015.11\", \"2016.6\", \"2017.1\", \"2017.8\" ]",
@@ -67,16 +67,16 @@ namespace net_quiz_sample.Models
             new Problem
             {
                 Id = 5,
-                Content = "Microsoft has the mission of",
+                Content = "ASP.NET applications can run on Cloud Foundry with",
                 Category = "Technology",
                 Difficulty = 0,
-                Options = "[ \"Connect the world’s professionals to make them more productive and successful\", \"Be the fabric of real-time communication on the web\", \"Empower every person and every organization on the planet to achieve more\", \"Make it fast, easy and fun to build great mobile apps\" ]",
-                Answer = 2
+                Options = "[ \"Windows Stack\", \"HWC Buildpack\", \"cf push\", \"All of the above\" ]",
+                Answer = 3
             },
             new Problem
             {
                 Id = 6,
-                Content = "What are supported when you run .NET  core apps on Cloud Foundry",
+                Content = "What are supported when you run .NET core apps on Cloud Foundry",
                 Category = "Technology",
                 Difficulty = 0,
                 Options = "[ \".Net Core Buildpacks\", \"Steeltoe\", \"Service Broker\", \"All of above\" ]",
@@ -99,6 +99,24 @@ namespace net_quiz_sample.Models
                 Difficulty = 0,
                 Options = "[ \"SSH into running containers\", \"Steeltoe\", \"Service Broker\", \"All of above\" ]",
                 Answer = 3
+            },
+            new Problem
+            {
+                Id = 9,
+                Content = "Which organization on GitHub hosts projects used by this Cloud Foundry environments",
+                Category = "Technology",
+                Difficulty = 0,
+                Options = "[ \"cloudfoundry\", \"cloudfoundry-community\", \"cloudfoundry-incubator\", \"All of above\" ]",
+                Answer = 3
+            },
+            new Problem
+            {
+                Id = 10,
+                Content = "Which VM is optional in a Small Footprint PAS",
+                Category = "Technology",
+                Difficulty = 0,
+                Options = "[ \"Compute\", \"Control\", \"HAProxy\", \"Database\" ]",
+                Answer = 2
             },
         };
     }
